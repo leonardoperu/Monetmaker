@@ -66,13 +66,8 @@ def get_intermediate_layers_model(layer_names):
     return intermediate_layers_model
 
 
-
-
-
-def show_feature_maps(model, layer_names, image):
-    outputs = get_outputs_by_layer_names(model, layer_names)
-    model2 = Model(inputs=model.inputs, outputs=outputs)
-    feature_maps = model2.predict(image)
+def show_feature_maps(model, image):
+    feature_maps = model.predict(image)
     # plot the output from each block
     square = 8
     for fmap in feature_maps:
@@ -85,7 +80,7 @@ def show_feature_maps(model, layer_names, image):
                 ax.set_xticks([])
                 ax.set_yticks([])
                 # plot filter channel in grayscale
-                pyplot.imshow(fmap[0, :, :, ix-1], cmap='gray')
+                pyplot.imshow(fmap[:, :, ix-1], cmap='gray')
                 ix += 1
         # show the figure
         pyplot.show()

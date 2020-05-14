@@ -3,5 +3,4 @@ prova_keras_vgg19_classification.py
 content_extraction_DIRTY.py
 tf_sol.py
 imgs/vgg19_classification
-imgs/generated
-log_content_1000steps
+Log/
