@@ -11,7 +11,7 @@ In this module, the content of a target image is reconstructed starting from a r
 At every step, the content of the generated image is refined in order to minimize the loss (mean
 squared distance) with the features extracted from the content target image.
 
-Usage:  content_extraction.py [-v] -c <content image> [-l <layer name>] [-s <update steps]>
+Usage:  content_extraction.py [-v] -c <content image> [-l <layer name>] [-s <update steps>]
 Options:    -v                  : visualization of the feature maps in the content output layer
             -c <content_image>  : path to the target image
             -l <layer name>     : name of the layer used to extract the features. Recommended: block4_conv2 (default), block4_conv1, block3_conv1
