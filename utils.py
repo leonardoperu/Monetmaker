@@ -32,7 +32,7 @@ def load_img(path, max_dim=512):
     scale = max_dim / longest_dim
     new_shape = tf.cast(shape * scale, tf.int32)
     img = tf.image.resize(img, new_shape)
-    img = img[tf.newaxis, :]    #shape (1, 450, 600, 3)
+    img = img[tf.newaxis, :]    # shape (1, 450, 600, 3)
     return img
 
 
@@ -43,7 +43,7 @@ def clip_image_0_1(img):
 def tensor_to_image(tensor):
     tensor = tensor*255.0
     tensor = np.array(tensor, dtype=np.uint8)
-    if np.ndim(tensor)>3:
+    if np.ndim(tensor) > 3:
         assert tensor.shape[0] == 1
         tensor = tensor[0]
     return PIL.Image.fromarray(tensor)
