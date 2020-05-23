@@ -2,7 +2,7 @@ import numpy as np
 import PIL
 import tensorflow as tf
 from keras.applications.vgg19 import VGG19, preprocess_input
-from keras.preprocessing.image import load_img
+#from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.models import Model
 from matplotlib import pyplot
