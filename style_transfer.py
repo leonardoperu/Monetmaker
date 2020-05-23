@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from utils import load_img, preprocess_input, clip_image_0_1, show_feature_maps
+from logger import Logger
 from content_extraction import content_loss, ContentExtractor
 from style_extraction import style_loss, StyleExtractor, gram
 import sys
@@ -10,7 +11,10 @@ import getopt
 from PIL import Image
 
 
-WEIGHTS = (8e-1, 4e1) # (style, content)
+WEIGHTS = (4e1, 8e-1) # (content, style)
+total_variation_weight = 40
+log_folder = "Log/"
+
 
 
 class StyleContentExtractor(tf.keras.models.Model):
@@ -32,8 +36,8 @@ class StyleContentExtractor(tf.keras.models.Model):
 
 
 def total_loss(style_outputs, style_targets, content_outputs, content_targets, weights):
-    s_loss = style_loss(style_outputs, style_targets, weights[0])
-    c_loss = content_loss(content_outputs, content_targets, weights[1])
+    c_loss = content_loss(content_outputs, content_targets, weights[0])
+    s_loss = style_loss(style_outputs, style_targets, weights[1])
     loss = s_loss + c_loss
     return loss, s_loss, c_loss
 
@@ -42,7 +46,7 @@ def update_image_step(gen_image, style_target, content_target, optimizer, extrac
     with tf.GradientTape() as tape:
         gen_style_output, gen_content_output = extractor(gen_image)
         loss, s_loss, c_loss = total_loss(gen_style_output, style_target, gen_content_output, content_target, weights)
-        loss += 40 * tf.image.total_variation(gen_image)
+        loss += total_variation_weight * tf.image.total_variation(gen_image)
     grad = tape.gradient(loss, gen_image)
     optimizer.apply_gradients([(grad, gen_image)])
     gen_image.assign(clip_image_0_1(gen_image))
@@ -51,8 +55,8 @@ def update_image_step(gen_image, style_target, content_target, optimizer, extrac
 
 def main(argv):
     features_visualization = False
-    style_path = "imgs/style/starry_night.jpeg"
-    content_path = "imgs/content/san_petronio.jpg"
+    style_name = "starry_night.jpeg"
+    content_name = "san_petronio.jpg"
     style_layers = ["block1_conv1", "block2_conv1", "block3_conv1", "block4_conv1", "block5_conv1"]
     content_layers = ["block4_conv2"]
 
@@ -71,13 +75,17 @@ def main(argv):
         elif opt in ("-v", "--visualization"):
             features_visualization = True
         elif opt in ("-t", "--style"):
-            style_path = arg
+            style_name = arg
         elif opt in ("-c", "--content"):
-            content_path = arg
+            content_name = arg
         elif opt in ("-l", "--layer"):
             style_layers = [arg]
         elif opt in ("-s", "--steps"):
             steps = int(arg)
+
+    style_path = "imgs/style/" + style_name
+    content_path = "imgs/content/" + content_name
+    logger = Logger(log_folder, W[0], W[1], total_variation_weight, steps, content_name, style_name)
 
     content_image = load_img(content_path)
     style_image = load_img(style_path)    # tf.Tensor([[[[0.7294118  0.59607846 0.45882356] [0.7568628  0.62352943 0.48627454] [0.6509804  0.52156866 0.3921569] ...
@@ -107,28 +115,35 @@ def main(argv):
         print_step = 10
     elif steps <= 500:
         print_step = 20
-    else:
+    elif steps <= 1500:
         print_step = 100
+    else:
+        print_step = 200
 
     loss, s_loss, c_loss = 0, 0, 0
-    save_as = "imgs/generated/transfer/" + style_path.split("/")[-1].split(".")[0] + "_"
-    save_as += content_path.split("/")[-1].split(".")[0] + "_" + str(steps) + "_steps.jpg"
-    half = {500: (0.8, 40), 1000: (0.9, 40), 1500: (1, 40), 2000: (1, 40)}
+    save_as = "imgs/generated/transfer/" + style_name.split(".")[0] + "_"
+    save_as += content_name.split(".")[0] + "_" + str(steps) + "_steps.jpg"
+    half = {500: (40, 0.8), 1000: (40, 0.9), 1500: (40, 1), 2000: (40, 1.2)}
 
     for _ in tqdm(range(steps), file=sys.stdout):
         if _ == 200:
             opt.learning_rate = 0.04
+            logger.param_change(_, W[0], W[1], total_variation_weight, 0.04)
         if _ in half.keys():
             opt.learning_rate.assign(opt.learning_rate / 2)
             W = half[_]
             print("=" * 20 + "new weights: " + str(half[_]) + ", lr halved" + "=" * 20)
+            logger.param_change(_, W[0], W[1], total_variation_weight, opt.learning_rate)
         if _ == 1 or _ != 0 and _ % print_step == 0:
             print("\tLoss at step {}:\t{}\t[ S: {:.2f}; C: {:.2f} ]".format(_, loss, s_loss, c_loss))
+            logger.print_loss(_, loss[0], s_loss, c_loss)
             plt.imshow(np.array(gen_image[0]))
             plt.show()
         loss, s_loss, c_loss = update_image_step(gen_image, style_targets, content_targets, opt, extractor, W)
 
     print("\t"*12 + "Loss at step {}:\t{}\t[ S: {:.2f}; C: {:.2f} ]".format(steps, loss, s_loss, c_loss))
+    logger.print_loss(_, loss[0], s_loss, c_loss)
+    logger.close()
     plt.imshow(np.array(gen_image[0]))
     plt.show()
 
