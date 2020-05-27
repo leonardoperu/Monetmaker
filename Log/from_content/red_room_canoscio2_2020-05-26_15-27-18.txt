@@ -1,0 +1,31 @@
+2020-05-26 15:27:18
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: canoscio2.png
+Style   image: red_room.jpg
+
+Step     1 - total loss:    37402103808.0	[ S:  37401088000.0 ; C:          0.0 ]
+Step   200 - total loss:      278399456.0	[ S:    250140496.0 ; C:   24456672.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:       93654184.0	[ S:     65329720.0 ; C:   25039762.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:      123540152.0	[ S:     94275800.0 ; C:   25645132.0 ]
+Step   800 - total loss:       82833832.0	[ S:     53865568.0 ; C:   25621312.0 ]
+Step  1000 - total loss:       75508672.0	[ S:     46765568.0 ; C:   25533384.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       67209712.0	[ S:     38614552.0 ; C:   25458002.0 ]
+Step  1400 - total loss:       62182644.0	[ S:     33735160.0 ; C:   25374652.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       62359232.0	[ S:     33971720.0 ; C:   25362002.0 ]
+Step  1800 - total loss:       59929284.0	[ S:     31594550.0 ; C:   25343716.0 ]
+Step  2000 - total loss:       57705408.0	[ S:     29437388.0 ; C:   25313330.0 ]
+
+Finished at 00:00:01

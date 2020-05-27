@@ -1,0 +1,31 @@
+2020-05-26 10:55:34
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: canoscio1.png
+Style   image: crows_cornfield.jpg
+
+Step     1 - total loss:    34107033600.0	[ S:  34104786944.0 ; C:          0.0 ]
+Step   200 - total loss:       80073152.0	[ S:     51019836.0 ; C:   24339660.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:       67111688.0	[ S:     38667504.0 ; C:   23905576.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:       52835336.0	[ S:     24539994.0 ; C:   23787318.0 ]
+Step   800 - total loss:       47026668.0	[ S:     19291916.0 ; C:   23345748.0 ]
+Step  1000 - total loss:       52361848.0	[ S:     25113300.0 ; C:   22946062.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       44222760.0	[ S:     16999852.0 ; C:   22971170.0 ]
+Step  1400 - total loss:       42666432.0	[ S:     15625461.0 ; C:   22842516.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       43198656.0	[ S:     16246523.0 ; C:   22795204.0 ]
+Step  1800 - total loss:       42360924.0	[ S:     15469333.0 ; C:   22764468.0 ]
+Step  2000 - total loss:       41536444.0	[ S:     14737139.0 ; C:   22705078.0 ]
+
+Finished at 00:00:01

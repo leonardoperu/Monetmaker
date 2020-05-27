@@ -1,0 +1,31 @@
+2020-05-25 15:55:42
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: san_petronio.jpg
+Style   image: composition_VII.jpg
+
+Step     1 - total loss:   127850143744.0	[ S: 127848939520.0 ; C:          0.0 ]
+Step   200 - total loss:      110021680.0	[ S:     68976672.0 ; C:   36245448.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:       98129376.0	[ S:     57166012.0 ; C:   36294584.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:       74785216.0	[ S:     34165744.0 ; C:   36062824.0 ]
+Step   800 - total loss:       69950440.0	[ S:     29557254.0 ; C:   35897028.0 ]
+Step  1000 - total loss:       66637664.0	[ S:     26456134.0 ; C:   35739904.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       67945728.0	[ S:     27787290.0 ; C:   35748264.0 ]
+Step  1400 - total loss:       66172204.0	[ S:     26101812.0 ; C:   35693388.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       67673536.0	[ S:     27636296.0 ; C:   35686652.0 ]
+Step  1800 - total loss:       66689048.0	[ S:     26670564.0 ; C:   35686848.0 ]
+Step  2000 - total loss:       65715280.0	[ S:     25737634.0 ; C:   35666748.0 ]
+
+Finished at 00:00:01

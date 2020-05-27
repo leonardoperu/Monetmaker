@@ -1,0 +1,31 @@
+2020-05-26 14:59:54
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: canoscio1.png
+Style   image: rising_sun_impression.jpg
+
+Step     1 - total loss:     6294842880.0	[ S:   6292597248.0 ; C:          0.0 ]
+Step   200 - total loss:       46695364.0	[ S:     29151920.0 ; C:   14406425.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:       36193996.0	[ S:     19843648.0 ; C:   13422601.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:       18403798.0	[ S:      4013401.2 ; C:   11803054.0 ]
+Step   800 - total loss:       16809886.0	[ S:      3380352.5 ; C:   11053474.0 ]
+Step  1000 - total loss:       16064583.0	[ S:      3152485.2 ; C:   10695416.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       15845912.0	[ S:      3119051.5 ; C:   10599751.0 ]
+Step  1400 - total loss:       15608451.0	[ S:      3114488.0 ; C:   10447605.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       15486922.0	[ S:      3066168.5 ; C:   10429002.0 ]
+Step  1800 - total loss:       15277669.0	[ S:      2948545.0 ; C:   10378345.0 ]
+Step  2000 - total loss:       15074895.0	[ S:      2849807.5 ; C:   10315570.0 ]
+
+Finished at 00:00:01

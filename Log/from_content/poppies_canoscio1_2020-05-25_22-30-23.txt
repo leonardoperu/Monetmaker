@@ -1,0 +1,31 @@
+2020-05-25 22:30:23
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: canoscio1.png
+Style   image: poppies.jpg
+
+Step     1 - total loss:    10091732992.0	[ S:  10089487360.0 ; C:          0.0 ]
+Step   200 - total loss:       69416968.0	[ S:     47331228.0 ; C:   18738544.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:       38163000.0	[ S:     16734527.0 ; C:   18273728.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:       28082356.0	[ S:      8023701.0 ; C:   17135018.0 ]
+Step   800 - total loss:       24277356.0	[ S:      5548742.0 ; C:   16019071.0 ]
+Step  1000 - total loss:       23251584.0	[ S:      5229965.5 ; C:   15456778.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       22587828.0	[ S:      4885066.5 ; C:   15227269.0 ]
+Step  1400 - total loss:       25722888.0	[ S:      8355348.5 ; C:   14966128.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       22029692.0	[ S:      4798255.0 ; C:   14886966.0 ]
+Step  1800 - total loss:       21686518.0	[ S:      4592125.0 ; C:   14793492.0 ]
+Step  2000 - total loss:       21454234.0	[ S:      4505532.0 ; C:   14691239.0 ]
+
+Finished at 00:00:01

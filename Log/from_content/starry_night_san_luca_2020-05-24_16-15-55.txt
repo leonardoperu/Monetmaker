@@ -1,0 +1,31 @@
+2020-05-24 16:15:55
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: san_luca.jpg
+Style   image: starry_night.jpeg
+
+Step     1 - total loss:    19007490048.0	[ S:  19005716480.0 ; C:          0.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   200 - total loss:       63167228.0	[ S:     34823708.0 ; C:   24164968.0 ]
+Step   400 - total loss:       59879584.0	[ S:     32272934.0 ; C:   23511688.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = <tf.Variable 'Adam/learning_rate:0' shape=() dtype=float32, numpy=0.02>
+Step   600 - total loss:       38304932.0	[ S:     12291010.0 ; C:   22204072.0 ]
+Step   800 - total loss:       35661384.0	[ S:     10455314.0 ; C:   21518108.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = <tf.Variable 'Adam/learning_rate:0' shape=() dtype=float32, numpy=0.01>
+Step  1000 - total loss:       47592492.0	[ S:     23116830.0 ; C:   20889330.0 ]
+Step  1200 - total loss:       34407580.0	[ S:      9923471.0 ; C:   20954212.0 ]
+Step  1400 - total loss:       33573088.0	[ S:      9352574.0 ; C:   20751436.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = <tf.Variable 'Adam/learning_rate:0' shape=() dtype=float32, numpy=0.005>
+Step  1600 - total loss:       33982920.0	[ S:      9874552.0 ; C:   20685046.0 ]
+Step  1800 - total loss:       33560424.0	[ S:      9532741.0 ; C:   20636206.0 ]
+Step  1999 - total loss:       33144128.0	[ S:      9231139.0 ; C:   20555446.0 ]
+
+Finished at 00:00:01

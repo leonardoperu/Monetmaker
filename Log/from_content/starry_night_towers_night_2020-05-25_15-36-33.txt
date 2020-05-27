@@ -1,0 +1,31 @@
+2020-05-25 15:36:33
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: towers_night.jpg
+Style   image: starry_night.jpg
+
+Step     1 - total loss:    82127396864.0	[ S:  82126430208.0 ; C:          0.0 ]
+Step   200 - total loss:      145360992.0	[ S:    111793168.0 ; C:   27393338.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:       71215432.0	[ S:     37736140.0 ; C:   27395398.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:       63085232.0	[ S:     29650800.0 ; C:   27324916.0 ]
+Step   800 - total loss:       57409840.0	[ S:     24133808.0 ; C:   27226462.0 ]
+Step  1000 - total loss:       53758032.0	[ S:     20650242.0 ; C:   27120704.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       54499956.0	[ S:     21423310.0 ; C:   27122560.0 ]
+Step  1400 - total loss:       52844680.0	[ S:     19847760.0 ; C:   27079676.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       53735752.0	[ S:     20783492.0 ; C:   27064860.0 ]
+Step  1800 - total loss:       52824872.0	[ S:     19902236.0 ; C:   27056742.0 ]
+Step  2000 - total loss:       51925100.0	[ S:     19046338.0 ; C:   27036790.0 ]
+
+Finished at 00:00:01

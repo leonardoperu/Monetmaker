@@ -1,0 +1,31 @@
+2020-05-26 15:22:52
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: canoscio2.png
+Style   image: starry_night.jpg
+
+Step     1 - total loss:    28773439488.0	[ S:  28772423680.0 ; C:          0.0 ]
+Step   200 - total loss:       78727984.0	[ S:     53487864.0 ; C:   21274680.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:       41630296.0	[ S:     16476499.0 ; C:   21323104.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:       35465216.0	[ S:     10961800.0 ; C:   20846912.0 ]
+Step   800 - total loss:       39845476.0	[ S:     15930411.0 ; C:   20360038.0 ]
+Step  1000 - total loss:       31966644.0	[ S:      8331869.5 ; C:   20189262.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       32065558.0	[ S:      8534792.0 ; C:   20146316.0 ]
+Step  1400 - total loss:       31357260.0	[ S:      8006864.0 ; C:   20026036.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       31754166.0	[ S:      8475042.0 ; C:   19996406.0 ]
+Step  1800 - total loss:       31382216.0	[ S:      8167013.0 ; C:   19965012.0 ]
+Step  2000 - total loss:       31031678.0	[ S:      7899900.0 ; C:   19915602.0 ]
+
+Finished at 00:00:01

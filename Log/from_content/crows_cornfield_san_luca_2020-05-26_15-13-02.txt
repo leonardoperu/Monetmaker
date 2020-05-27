@@ -1,0 +1,31 @@
+2020-05-26 15:13:02
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: san_luca.jpg
+Style   image: crows_cornfield.jpg
+
+Step     1 - total loss:    35770953728.0	[ S:  35769180160.0 ; C:          0.0 ]
+Step   200 - total loss:       70265784.0	[ S:     39270872.0 ; C:   26372120.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:       52821552.0	[ S:     23003858.0 ; C:   25385816.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:       47522276.0	[ S:     18373604.0 ; C:   24804630.0 ]
+Step   800 - total loss:       43793256.0	[ S:     15308462.0 ; C:   24227248.0 ]
+Step  1000 - total loss:       42117576.0	[ S:     14135488.0 ; C:   23787684.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       41695312.0	[ S:     13885176.0 ; C:   23670418.0 ]
+Step  1400 - total loss:       40355236.0	[ S:     12808883.0 ; C:   23456742.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       40761036.0	[ S:     13352006.0 ; C:   23358520.0 ]
+Step  1800 - total loss:       40064100.0	[ S:     12746704.0 ; C:   23295258.0 ]
+Step  2000 - total loss:       39377480.0	[ S:     12183734.0 ; C:   23202508.0 ]
+
+Finished at 00:00:01

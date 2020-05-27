@@ -1,0 +1,31 @@
+2020-05-26 15:31:18
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: canoscio2.png
+Style   image: munch.jpg
+
+Step     1 - total loss:     6926066176.0	[ S:   6925049856.0 ; C:          0.0 ]
+Step   200 - total loss:       82999280.0	[ S:     63303368.0 ; C:   16970064.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:      251146240.0	[ S:    230747776.0 ; C:   17475962.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:       27359854.0	[ S:      9235548.0 ; C:   15789450.0 ]
+Step   800 - total loss:       24780830.0	[ S:      7369721.0 ; C:   15259959.0 ]
+Step  1000 - total loss:       23113520.0	[ S:      6127733.0 ; C:   14967901.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       22927300.0	[ S:      6087227.5 ; C:   14897286.0 ]
+Step  1400 - total loss:       22839184.0	[ S:      6195512.0 ; C:   14769591.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       22482020.0	[ S:      5895757.5 ; C:   14758075.0 ]
+Step  1800 - total loss:       22149360.0	[ S:      5638658.5 ; C:   14717808.0 ]
+Step  2000 - total loss:       21835962.0	[ S:      5413860.5 ; C:   14664611.0 ]
+
+Finished at 00:00:01

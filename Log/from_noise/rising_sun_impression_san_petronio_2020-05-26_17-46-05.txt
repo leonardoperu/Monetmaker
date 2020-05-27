@@ -1,0 +1,58 @@
+2020-05-26 17:46:05
+Weights (content, style, variation) = (1200.0, 0.80, 40)
+Update steps: 8000
+Content image: san_petronio.jpg
+Style   image: rising_sun_impression.jpg
+
+Step     1 - total loss:   106387030016.0	[ S: 105635135488.0 ; C:  736202240.0 ]
+Step   200 - total loss:      245041392.0	[ S:     41787504.0 ; C:  190311200.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (1200.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:      195570464.0	[ S:     31377494.0 ; C:  151532848.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (1200.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:      181848336.0	[ S:     29210900.0 ; C:  140179392.0 ]
+Step   800 - total loss:      175917344.0	[ S:     28405322.0 ; C:  135205776.0 ]
+Step  1000 - total loss:      171440464.0	[ S:     27777770.0 ; C:  131527208.0 ]
+Step  1200 - total loss:      168043008.0	[ S:     27346224.0 ; C:  128751272.0 ]
+Step  1400 - total loss:      165358272.0	[ S:     27031626.0 ; C:  126592040.0 ]
+Step  1600 - total loss:      163217760.0	[ S:     26776758.0 ; C:  124939136.0 ]
+Step  1800 - total loss:      161461296.0	[ S:     26558628.0 ; C:  123655696.0 ]
+Step  2000 - total loss:      160036768.0	[ S:     26487380.0 ; C:  122579128.0 ]
+Step  2200 - total loss:      158818208.0	[ S:     26415708.0 ; C:  121726976.0 ]
+Step  2400 - total loss:      157773552.0	[ S:     26303826.0 ; C:  121112240.0 ]
+Step  2600 - total loss:      164410128.0	[ S:     34047064.0 ; C:  120343792.0 ]
+Step  2800 - total loss:      155945200.0	[ S:     25871844.0 ; C:  120403848.0 ]
+Step  3000 - total loss:      158921968.0	[ S:     30625148.0 ; C:  118998552.0 ]
+
+----------------------------------------
+Parameters changed at step 3000: weights (content, style, variation) = (1200.0, 1.00, 40) ; learning rate = 0.01
+Step  3200 - total loss:      159965776.0	[ S:     27023328.0 ; C:  123851992.0 ]
+Step  3400 - total loss:      159448592.0	[ S:     26799012.0 ; C:  123778512.0 ]
+Step  3600 - total loss:      159230784.0	[ S:     26640026.0 ; C:  123952544.0 ]
+Step  3800 - total loss:      166763904.0	[ S:     35326168.0 ; C:  123041960.0 ]
+Step  4000 - total loss:      159087120.0	[ S:     27390828.0 ; C:  123553016.0 ]
+Step  4200 - total loss:      157893504.0	[ S:     26355300.0 ; C:  123652904.0 ]
+Step  4400 - total loss:      157476256.0	[ S:     26364852.0 ; C:  123489440.0 ]
+Step  4600 - total loss:      157474160.0	[ S:     26595158.0 ; C:  123533776.0 ]
+Step  4800 - total loss:      162824352.0	[ S:     27715354.0 ; C:  127906232.0 ]
+Step  5000 - total loss:      158652080.0	[ S:     28362948.0 ; C:  123414304.0 ]
+Step  5200 - total loss:      156844544.0	[ S:     26808596.0 ; C:  123444720.0 ]
+Step  5400 - total loss:      163891728.0	[ S:     30333232.0 ; C:  127167040.0 ]
+Step  5600 - total loss:      155976368.0	[ S:     27123396.0 ; C:  122780688.0 ]
+Step  5800 - total loss:      157517680.0	[ S:     28705482.0 ; C:  123009488.0 ]
+Step  6000 - total loss:      156117040.0	[ S:     27081856.0 ; C:  123492400.0 ]
+Step  6200 - total loss:      154213872.0	[ S:     25907060.0 ; C:  123008408.0 ]
+Step  6400 - total loss:      154162768.0	[ S:     25932464.0 ; C:  123183312.0 ]
+Step  6600 - total loss:      153672448.0	[ S:     26599230.0 ; C:  122277704.0 ]
+Step  6800 - total loss:      154550368.0	[ S:     26424990.0 ; C:  123417688.0 ]
+Step  7000 - total loss:      154910544.0	[ S:     27874668.0 ; C:  122566304.0 ]
+Step  7200 - total loss:      154443136.0	[ S:     27235114.0 ; C:  122976688.0 ]
+Step  7400 - total loss:      153108336.0	[ S:     26072086.0 ; C:  122931928.0 ]
+Step  7600 - total loss:      158279632.0	[ S:     32508758.0 ; C:  121906264.0 ]
+Step  7800 - total loss:      154965664.0	[ S:     28781696.0 ; C:  122493528.0 ]
+Step  8000 - total loss:      188201536.0	[ S:     51722452.0 ; C:  132641936.0 ]
+
+Finished at 18:00:19
