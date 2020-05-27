@@ -8,21 +8,11 @@ from keras.models import Model
 from matplotlib import pyplot
 
 
-def prepare_img(img_path):
-    # load the image with the required shape
-    img = load_img(img_path, target_size=(224, 224))
-    # convert the image to an array
-    img = img_to_array(img)
-    # expand dimensions so that it represents a single 'sample'
-    # reshaping in 4 dimensions: samples, rows, columns, channels
-    img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2])
-    # prepare the image (e.g. scale pixel values for the vgg)
-    # this subtracts the avg RGB value, as specified in the paper https://arxiv.org/abs/1409.1556
-    img = preprocess_input(img)
-    return img
-
-
 def load_img(path, max_dim=512):
+    """
+    Used to load an image, described by its path, as a Tensor with values between 0 and 1.
+    The image is reshaped to make its longest dimension become equal to max_dim (by default 512)
+    """
     img = tf.io.read_file(path)
     img = tf.image.decode_image(img, channels=3)  # f.Tensor([[[177 188 216] [178 189 217] [179 190 218] ...
     img = tf.image.convert_image_dtype(img, tf.float32) # tf.Tensor([[[0.69411767 0.7372549  0.8470589 ] [0.69803923 0.7411765  0.85098046] [0.7019608  0.74509805 0.854902 ] ...
@@ -37,28 +27,32 @@ def load_img(path, max_dim=512):
 
 
 def clip_image_0_1(img):
+    """
+    Function to keep the (float) values of a processed image between 0 and 1
+    """
     return tf.clip_by_value(img, clip_value_min=0.0, clip_value_max=1.0)
 
 
-def tensor_to_image(tensor):
-    tensor = tensor*255.0
-    tensor = np.array(tensor, dtype=np.uint8)
-    if np.ndim(tensor) > 3:
-        assert tensor.shape[0] == 1
-        tensor = tensor[0]
-    return PIL.Image.fromarray(tensor)
-
-
 def get_layers_by_name(model, layer_names):
+    """
+    Used to obtain the list of the layers in the specified model, starting from their names
+    """
     return [model.get_layer(l) for l in layer_names]
 
 
 def get_outputs_by_layer_names(model, layer_names):
+    """
+    This returns the output features of the specified model layers
+    """
     result = [model.get_layer(l).output for l in layer_names]
     return result
 
 
 def get_intermediate_layers_model(layer_names):
+    """
+    Used to build a model based on the input and outputs of the specified layers,
+    starting from a VGG19 model without the fully connected layers
+    """
     vgg19 = tf.keras.applications.VGG19(include_top=False, weights='imagenet')
     vgg19.trainable = False
     output_layers = get_outputs_by_layer_names(vgg19, layer_names)
@@ -67,6 +61,9 @@ def get_intermediate_layers_model(layer_names):
 
 
 def show_feature_maps(model, image):
+    """
+    Function to show the feature maps in the layers of the passed model for the passed image
+    """
     feature_maps = model.predict(image)
     # plot the output from each block
     square = 8
@@ -84,3 +81,26 @@ def show_feature_maps(model, image):
                 ix += 1
         # show the figure
         pyplot.show()
+
+
+def prepare_img(img_path):
+    # load the image with the required shape
+    img = load_img(img_path, target_size=(224, 224))
+    # convert the image to an array
+    img = img_to_array(img)
+    # expand dimensions so that it represents a single 'sample'
+    # reshaping in 4 dimensions: samples, rows, columns, channels
+    img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2])
+    # prepare the image (e.g. scale pixel values for the vgg)
+    # this subtracts the avg RGB value, as specified in the paper https://arxiv.org/abs/1409.1556
+    img = preprocess_input(img)
+    return img
+
+
+def tensor_to_image(tensor):
+    tensor = tensor*255.0
+    tensor = np.array(tensor, dtype=np.uint8)
+    if np.ndim(tensor) > 3:
+        assert tensor.shape[0] == 1
+        tensor = tensor[0]
+    return PIL.Image.fromarray(tensor)

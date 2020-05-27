@@ -24,6 +24,6 @@ class Logger:
         self.logfile.write("Step {:=5d} - total loss: {:=16.1f}\t[ S: {:=14.1f} ; C: {:=12.1f} ]\n".format(step, loss, s_loss, c_loss))
 
     def close(self):
-        ts = time.strftime("%H:%M:%S", time.localtime(1))
+        ts = time.strftime("%H:%M:%S", time.localtime())
         self.logfile.write("\nFinished at " + ts + "\n")
         self.logfile.close()

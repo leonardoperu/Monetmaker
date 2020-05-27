@@ -16,8 +16,12 @@ total_variation_weight = 40
 log_folder = "Log/"
 
 
-
 class StyleContentExtractor(tf.keras.models.Model):
+    """
+    An instance of this class, when used to process an input image, returns
+    its style features (Gram matrix) and content features, extracted from the
+    specified layers.
+    """
     def __init__(self, style_layers, content_layers):
         super(StyleContentExtractor, self).__init__()
         self.style_extractor = StyleExtractor(style_layers)
@@ -36,6 +40,9 @@ class StyleContentExtractor(tf.keras.models.Model):
 
 
 def total_loss(style_outputs, style_targets, content_outputs, content_targets, weights):
+    """
+    Loss function to compute the total loss from the generated image and the couple of target images
+    """
     c_loss = content_loss(content_outputs, content_targets, weights[0])
     s_loss = style_loss(style_outputs, style_targets, weights[1])
     loss = s_loss + c_loss
@@ -90,9 +97,14 @@ def main(argv):
     content_image = load_img(content_path)
     style_image = load_img(style_path)    # tf.Tensor([[[[0.7294118  0.59607846 0.45882356] [0.7568628  0.62352943 0.48627454] [0.6509804  0.52156866 0.3921569] ...
                                             # shape (1, 324, 512, 3)
-    gen_image = tf.Variable(content_image, dtype=tf.float32)
+
+    """It is possible to start the generation from a random noise image rather than
+       from the content image by uncommenting these two lines and commenting the next one.
+       If you do so, set the content weight to 1200.0 (lines 14 and 138) """
     # white_noise = np.random.uniform(0, 1, content_image.shape)
     # gen_image = tf.Variable(white_noise, dtype=tf.float32)
+    gen_image = tf.Variable(content_image, dtype=tf.float32)
+
     # plt.imshow(np.array(gen_image[0]))
     # plt.show()
 
@@ -123,7 +135,7 @@ def main(argv):
     loss, s_loss, c_loss = 0, 0, 0
     save_as = "imgs/generated/transfer/" + style_name.split(".")[0] + "_"
     save_as += content_name.split(".")[0] + "_" + str(steps) + "_steps.jpg"
-    half = {500: (40, 0.8), 1000: (40, 0.9), 1500: (40, 1), 2000: (40, 1.2)}
+    half = {500: (40, 0.8), 1000: (40, 0.9), 1500: (40, 1.0), 2000: (40, 1.2)}
 
     for _ in tqdm(range(steps), file=sys.stdout):
         if _ == 200:

@@ -29,15 +29,11 @@ def gram(x):
     Returns:
         the gram matrix of x
     """
-    # use the keras function to access shape opposed to the instance member.
-    # this allows backward compatibility with TF1.2.1 (the version in conda)
     shape = K.shape(x[0])
     # flatten the 3D tensor by converting each filter's 2D matrix of points
-    # to a vector. thus we have the matrix:
-    # [filter_width x filter_height, num_filters]
+    # to a vector, thus we have the matrix: [filter_width x filter_height, num_filters]
     F = K.reshape(x, (shape[0] * shape[1], shape[2]))
-    # take inner product over all the vectors to produce the Gram matrix over
-    # the number of filters
+    # take inner product over all the vectors to produce the Gram matrix
     product = K.dot(K.transpose(F), F)
     product /= tf.cast(shape[0]*shape[1], tf.float32)
     shape = K.shape([product])
@@ -45,6 +41,12 @@ def gram(x):
 
 
 class StyleExtractor(tf.keras.models.Model):
+    """
+    An instance of this class, when used to process an input image, returns
+    its style features (Gram matrix) extracted from the specified layers.
+    In this application, the chosen layers are: "block1_conv1", "block2_conv1",
+    "block3_conv1", "block4_conv1", "block5_conv1".
+    """
     def __init__(self, style_layers):
         super(StyleExtractor, self).__init__()
         self.vgg = get_intermediate_layers_model(style_layers) # vgg is a Model(input, output), not the function vgg_layers
@@ -62,6 +64,10 @@ class StyleExtractor(tf.keras.models.Model):
 
 
 def style_loss(style_outputs, style_targets, weight=1.0):
+    """
+    Loss function to compute the distance between the style representation (Gram matrix)
+    of the processed image (style_outputs) and of the target style image (style_targets)
+    """
     loss = weight * tf.add_n(
         [tf.reduce_mean((style_outputs[l] - style_targets[l]) ** 2) for l in style_outputs.keys()])
     loss /= float(len(style_outputs))

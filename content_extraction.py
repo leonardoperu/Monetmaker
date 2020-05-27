@@ -20,6 +20,11 @@ Options:    -v                  : visualization of the feature maps in the conte
 
 
 class ContentExtractor(tf.keras.models.Model):
+    """
+    An instance of this class, when used to process an input image,
+    returns its content features extracted from the specified layer.
+    In this application, the chosen layer is  "block4_conv2".
+    """
     def __init__(self, content_layers):
         super(ContentExtractor, self).__init__()
         self.vgg = get_intermediate_layers_model(content_layers) # vgg is a Model(input, output), not the function vgg_layers
@@ -36,6 +41,10 @@ class ContentExtractor(tf.keras.models.Model):
 
 
 def content_loss(content_outputs, content_targets, weight=0.5):
+    """
+    Loss function to compute the distance between the content representation of
+    the processed image (content_outputs) and of the target style image (content_targets)
+    """
     loss = weight * tf.add_n(
         [tf.reduce_mean((content_outputs[l] - content_targets[l])**2) for l in content_outputs.keys()])
     return loss
