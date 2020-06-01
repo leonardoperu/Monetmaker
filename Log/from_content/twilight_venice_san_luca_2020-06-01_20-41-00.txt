@@ -1,0 +1,31 @@
+2020-06-01 20:41:00
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: san_luca.jpg
+Style   image: twilight_venice.jpg
+
+Step     1 - total loss:    11262219264.0	[ S:  11260445696.0 ; C:          0.0 ]
+Step   200 - total loss:       39320828.0	[ S:     16775702.0 ; C:   19239260.0 ]
+
+----------------------------------------
+Parameters changed at step 200: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.04
+Step   400 - total loss:      514107008.0	[ S:    492963648.0 ; C:   18090624.0 ]
+
+----------------------------------------
+Parameters changed at step 500: weights (content, style, variation) = (40.0, 0.80, 40) ; learning rate = 0.02
+Step   600 - total loss:       35062424.0	[ S:     12865362.0 ; C:   18870850.0 ]
+Step   800 - total loss:       29851796.0	[ S:      9410050.0 ; C:   17333472.0 ]
+Step  1000 - total loss:       42468340.0	[ S:     22619256.0 ; C:   16881448.0 ]
+
+----------------------------------------
+Parameters changed at step 1000: weights (content, style, variation) = (40.0, 0.90, 40) ; learning rate = 0.01
+Step  1200 - total loss:       27038136.0	[ S:      7969401.0 ; C:   16211121.0 ]
+Step  1400 - total loss:       25726912.0	[ S:      7175075.0 ; C:   15793641.0 ]
+
+----------------------------------------
+Parameters changed at step 1500: weights (content, style, variation) = (40.0, 1.00, 40) ; learning rate = 0.005
+Step  1600 - total loss:       25636718.0	[ S:      7328081.0 ; C:   15621720.0 ]
+Step  1800 - total loss:       25042854.0	[ S:      6912701.5 ; C:   15493144.0 ]
+Step  2000 - total loss:       24463936.0	[ S:      6534617.0 ; C:   15344965.0 ]
+
+Finished at 20:44:54

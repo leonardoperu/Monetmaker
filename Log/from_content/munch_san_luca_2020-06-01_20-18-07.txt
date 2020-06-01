@@ -1,0 +1,8 @@
+2020-06-01 20:18:07
+Weights (content, style, variation) = (40.0, 0.80, 40)
+Update steps: 2000
+Content image: san_luca.jpg
+Style   image: munch.jpg
+
+Step     1 - total loss:     8864415744.0	[ S:   8862642176.0 ; C:          0.0 ]
+Step   200 - total loss:       48022004.0	[ S:     24901092.0 ; C:   19911716.0 ]
